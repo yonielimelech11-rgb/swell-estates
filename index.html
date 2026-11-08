@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta property="og:title" content="Swell Estates by Elna">
+<meta property="og:description" content="קרקעות להשקעה בחוף הדרומי של סרי לנקה. בית מול הגלים, מהקרקע ועד המפתח.">
+<meta property="og:image" content="hero_sunset.jpg">
+<style>html,body{margin:0}[hidden]{display:none!important}</style>
+</head>
+<body>
+<title>Swell Estates by Elna</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="קרקעות להשקעה בחוף הדרומי של סרי לנקה, מגאלה ועד מיריסה. בית מול הגלים, מהקרקע ועד המפתח.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bellefair&family=Assistant:wght@300;400;500;600;700&display=swap">
+<style>
+/* Layout: a travel-magazine page led by full-bleed photography and video. Hero video → editorial story → a three-level map you can drill into (island → south coast → Ahangama) → opportunities → strategies & numbers → investor FAQ → contact over a sunset. Right-aligned (RTL) throughout; one display serif used large and light. */
+:root{
+  --paper:#FFFFFF;
+  --sand:#F3EEE6;        /* section tint, sparing */
+  --ink:#13292D;         /* deep lagoon */
+  --muted:#5E7173;
+  --line:#E2DED6;
+  --sea:#17707A;
+  --sea-ink:#FFFFFF;
+  --sunset:#D9733A;      /* accent for small details only */
+  --wash:#E5F0EF;
+  --land:#EDEAE2;
+  --good:#2F8656;
+  --shadow:0 2px 6px rgba(19,41,45,.05),0 24px 60px rgba(19,41,45,.12);
+  --display:"Bellefair","Frank Ruhl Libre","Times New Roman",serif;
+  --body:"Assistant","Segoe UI","Arial Hebrew",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0C1719;--sand:#122326;--ink:#ECF1EF;--muted:#9AAEAE;--line:#24373A;--sea:#58BAC2;--sea-ink:#06201F;--sunset:#EE925A;--wash:#103236;--land:#16292C;--good:#62C38D;
+  --shadow:0 2px 6px rgba(0,0,0,.3),0 24px 60px rgba(0,0,0,.45);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0C1719;--sand:#122326;--ink:#ECF1EF;--muted:#9AAEAE;--line:#24373A;--sea:#58BAC2;--sea-ink:#06201F;--sunset:#EE925A;--wash:#103236;--land:#16292C;--good:#62C38D;
+  --shadow:0 2px 6px rgba(0,0,0,.3),0 24px 60px rgba(0,0,0,.45);color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.75;-webkit-font-smoothing:antialiased;text-align:right}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:#0d1c1f}
+a{color:inherit}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:400}
+p{margin:0}
+img{display:block;max-width:100%}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+.wrap{max-width:1240px;margin-inline:auto;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(72px,10vw,140px)}
+.over{font-size:16px;font-weight:600;color:var(--sea);margin-bottom:14px}
+.h2{font-family:var(--display);font-size:clamp(40px,5.4vw,72px);line-height:1.08;letter-spacing:-.005em}
+.lead{color:var(--muted);font-size:clamp(18px,1.55vw,21px);max-width:58ch;line-height:1.75}
+.head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px);max-width:780px}
+:focus-visible{outline:3px solid var(--sea);outline-offset:3px;border-radius:6px}
+
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:10px;font:600 17px/1 var(--body);padding:16px 26px;border-radius:999px;border:1.5px solid transparent;text-decoration:none;cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease}
+.btn-sea{background:var(--sea);color:var(--sea-ink)}
+.btn-sea:hover{background:color-mix(in srgb,var(--sea) 85%,#000)}
+.btn-line{border-color:var(--line);color:var(--ink);background:transparent}
+.btn-line:hover{border-color:var(--sea);color:var(--sea)}
+.btn-white{background:#fff;color:#13292D}
+.btn-glass{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn-glass:hover{background:rgba(255,255,255,.22)}
+.btn svg{width:19px;height:19px;flex:none}
+
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background .3s ease,box-shadow .3s ease;color:#fff}
+.nav .wrap{display:flex;align-items:center;gap:24px;min-height:76px}
+.nav.solid{background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);color:var(--ink)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex:none}
+.brand svg{width:36px;height:36px}
+.brand-word{display:flex;flex-direction:column;line-height:1.05;direction:ltr;text-align:left}
+.brand-word b{font-family:var(--display);font-size:25px;font-weight:400;letter-spacing:.03em}
+.brand-word i{font-style:normal;font-size:13px;opacity:.75;letter-spacing:.04em}
+.links{display:flex;gap:2px;margin-inline-start:auto}
+.links a{text-decoration:none;font-size:16px;padding:8px 13px;border-radius:999px;opacity:.85}
+.links a:hover{opacity:1;background:rgba(127,127,127,.14)}
+.nav .btn{padding:12px 20px;font-size:16px;background:#fff;color:#13292D}
+.nav.solid .btn{background:var(--sea);color:var(--sea-ink)}
+@media (max-width:1020px){.links{display:none}.nav .btn{margin-inline-start:auto}}
+@media (max-width:420px){.brand-word b{font-size:20px}.brand svg{width:30px;height:30px}.nav .btn{padding:10px 14px;font-size:15px}.nav .wrap{gap:10px}}
+
+.hero{position:relative;min-height:min(100svh,940px);display:flex;align-items:flex-end;color:#fff;padding-block:140px 0;overflow:hidden;background:#0d1c1f}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,20,22,.55) 0%,rgba(8,20,22,.05) 35%,rgba(8,20,22,.25) 60%,rgba(8,20,22,.85) 100%)}
+.hero .wrap{position:relative;z-index:1;width:100%}
+.hero-place{font-size:17px;font-weight:600;opacity:.9}
+.hero h1{font-family:var(--display);font-size:clamp(58px,10vw,148px);line-height:.98;letter-spacing:-.01em;margin-top:14px;max-width:11ch}
+.hero .lead{color:rgba(255,255,255,.86);margin-top:24px;font-size:clamp(18px,1.7vw,22px)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-strip{margin-top:clamp(48px,7vw,88px);border-top:1px solid rgba(255,255,255,.22);display:grid;grid-template-columns:repeat(4,1fr)}
+.hero-strip div{padding:22px 0 30px;padding-inline-end:20px}
+.hero-strip b{display:block;font-family:var(--display);font-size:clamp(32px,3.4vw,46px);line-height:1;font-weight:400}
+.hero-strip span{display:block;font-size:15px;opacity:.78;margin-top:8px;line-height:1.45}
+@media (max-width:760px){.hero-strip{grid-template-columns:1fr 1fr}.hero-strip div{padding:16px 0 18px}}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,96px);align-items:center}
+.story>*{min-width:0}
+.collage{position:relative;aspect-ratio:4/5}
+.collage img{position:absolute;object-fit:cover;border-radius:4px;box-shadow:var(--shadow)}
+.collage .a{top:0;left:18%;width:82%;height:82%}
+.collage .b{width:52%;height:46%;left:0;bottom:0;border:8px solid var(--paper)}
+.story .h2{font-size:clamp(38px,4.8vw,64px)}
+.story p{color:var(--muted);margin-top:20px;max-width:56ch}
+.story p.big{font-size:clamp(20px,1.8vw,24px);color:var(--ink);line-height:1.6}
+.founders{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:34px;border-top:1px solid var(--line);padding-top:26px}
+.founders h3{font-family:var(--display);font-size:28px}
+.founders .role{font-size:15px;color:var(--sea);font-weight:600}
+.founders p{font-size:16px;margin-top:8px}
+.proof{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.proof span{font-size:15px;padding:8px 14px;border-radius:999px;background:var(--sand)}
+@media (max-width:900px){.story{grid-template-columns:1fr}.collage{max-width:520px}}
+@media (max-width:520px){.founders{grid-template-columns:1fr}}
+
+.story+.wrap{margin-top:0}
+.h3{font-family:var(--display);font-size:clamp(32px,3.6vw,48px);line-height:1.1}
+.skills-head{display:grid;gap:10px;margin-top:clamp(64px,8vw,110px);margin-bottom:28px;max-width:720px}
+.skills-head p{color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.skills>div{padding:26px 0 30px;padding-inline-end:28px;border-bottom:1px solid var(--line)}
+.skills>div:nth-child(3n+2),.skills>div:nth-child(3n+3){padding-inline-start:28px;border-inline-start:1px solid var(--line)}
+.skills h4{font-family:var(--display);font-size:28px;font-weight:400;margin:0;line-height:1.15}
+.skills h4::before{content:"";display:block;width:28px;height:2px;background:var(--sunset);margin-bottom:14px}
+.skills p{font-size:16px;color:var(--muted);margin-top:8px}
+@media (max-width:900px){.skills{grid-template-columns:1fr 1fr}.skills>div{padding-inline:0 18px!important;border-inline-start:0!important}.skills>div:nth-child(even){padding-inline:18px 0!important;border-inline-start:1px solid var(--line)!important}}
+@media (max-width:560px){.skills{grid-template-columns:1fr}.skills>div{padding-inline:0!important;border-inline-start:0!important}}
+.principles{margin-top:clamp(56px,7vw,96px);background:#0F2225;color:#EDF2F0;border-radius:8px;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:28px}
+.principles>*{min-width:0}
+.pr-title p{color:#A9BDBC;margin-top:10px;font-size:16px}
+.pr h4{font-size:18px;font-weight:700;margin:0;padding-top:14px;border-top:2px solid #7FD0D3}
+.pr p{font-size:15px;color:#A9BDBC;margin-top:8px}
+@media (max-width:1020px){.principles{grid-template-columns:1fr 1fr}.pr-title{grid-column:1/-1}}
+@media (max-width:520px){.principles{grid-template-columns:1fr}}
+.quote-big{margin:clamp(56px,7vw,96px) 0 0;padding:0;max-width:980px}
+.quote-big p{font-family:var(--display);font-size:clamp(30px,3.6vw,50px);line-height:1.3}
+.quote-big cite{display:block;font-style:normal;font-size:16px;color:var(--muted);margin-top:16px}
+.quote-big cite::before{content:"";display:inline-block;width:36px;height:2px;background:var(--sunset);vertical-align:middle;margin-inline-end:12px}
+#srilanka{background:var(--sand)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.fact{background:var(--paper);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.fact img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.fact div{padding:18px 20px 22px}
+.fact b{display:block;font-family:var(--display);font-size:38px;line-height:1.05;font-weight:400}
+.fact h3{font-size:17px;font-weight:700;margin-top:6px}
+.fact p{font-size:15px;color:var(--muted);margin-top:4px;line-height:1.6}
+@media (max-width:980px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.facts{grid-template-columns:1fr}}
+.src{font-size:13px;color:var(--muted);margin-top:20px}
+.src a{color:var(--muted)}
+
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:18px}
+.crumbs button{font:600 16px/1 var(--body);padding:11px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--muted);cursor:pointer}
+.crumbs button[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.crumbs .sep{color:var(--muted);font-size:14px}
+.explorer{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:start}
+.explorer>*{min-width:0}
+.stage{background:var(--wash);border-radius:8px;overflow:hidden;position:relative}
+.stage svg{display:block;width:100%;height:auto;direction:ltr;transition:opacity .25s ease}
+.stage svg text{unicode-bidi:plaintext}
+.hint{position:absolute;bottom:14px;right:14px;background:var(--paper);border-radius:999px;padding:8px 14px;font-size:14px;box-shadow:var(--shadow)}
+.panel{background:var(--paper);border:1px solid var(--line);border-radius:8px;overflow:hidden;position:sticky;top:96px}
+.panel img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.panel .pb{padding:22px}
+.panel h3{font-family:var(--display);font-size:34px;line-height:1.1}
+.panel .kind{font-size:14px;font-weight:600;color:var(--sea)}
+.panel p{font-size:16px;color:var(--muted);margin-top:8px}
+.panel .btn{margin-top:16px;padding:12px 18px;font-size:15px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.filters button{font:600 14px/1 var(--body);padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:flex;gap:7px;align-items:center}
+.filters button i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.filters button[aria-pressed="false"]{opacity:.5}
+.hot{cursor:pointer}
+.hot .ring{transition:r .2s ease}
+.hot:hover .ring,.hot.on .ring{r:16}
+.legend-note{font-size:13px;color:var(--muted);margin-top:10px}
+@media (max-width:900px){.explorer{grid-template-columns:1fr}.panel{position:static}}
+
+.band{position:relative;color:#fff;min-height:620px;display:flex;align-items:center;overflow:hidden;background:#0d1c1f}
+.band video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(8,20,22,.78) 0%,rgba(8,20,22,.45) 50%,rgba(8,20,22,.1) 100%)}
+.band .wrap{position:relative;z-index:1;width:100%}
+.band .h2{max-width:12ch}
+.band p{color:rgba(255,255,255,.86);max-width:46ch;margin-top:20px;font-size:20px}
+.mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(120px,14vw,190px);gap:10px}
+.mosaic figure{margin:0;position:relative;overflow:hidden;border-radius:4px}
+.mosaic img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mosaic figure:hover img{transform:scale(1.04)}
+.mosaic figcaption{position:absolute;bottom:0;right:0;left:0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:15px;font-weight:600}
+.m1{grid-column:span 3;grid-row:span 2}.m2{grid-column:span 3}.m3{grid-column:span 2}.m4{grid-column:span 1}.m5{grid-column:span 2}.m6{grid-column:span 2}.m7{grid-column:span 2}
+@media (max-width:760px){.mosaic{grid-template-columns:1fr 1fr}.mosaic figure{grid-column:span 1!important;grid-row:span 1!important}.mosaic .m1{grid-column:span 2!important;grid-row:span 2!important}}
+
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+@media (max-width:860px){.cards{grid-template-columns:1fr}}
+.card{border-radius:6px;overflow:hidden;background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .25s ease}
+.card:hover{box-shadow:var(--shadow)}
+.thumb{position:relative;aspect-ratio:16/10;border:0;padding:0;cursor:pointer;background:var(--land);display:block;width:100%}
+.thumb{overflow:hidden}
+.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.15) contrast(1.05)}
+.thumb .badge{position:absolute;top:16px;right:16px;background:var(--paper);color:var(--ink);font-family:var(--display);font-size:22px;padding:8px 15px;border-radius:999px}
+.thumb .status{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);color:#2F8656;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px}
+.thumb .play{position:absolute;bottom:16px;right:16px;display:flex;align-items:center;gap:8px;background:rgba(8,20,22,.72);color:#fff;font-size:14px;padding:8px 14px;border-radius:999px}
+.thumb .play svg{width:11px;height:11px;transform:scaleX(-1)}
+.card-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:14px;flex:1}
+.card h3{font-family:var(--display);font-size:34px;line-height:1.05}
+.card .road{font-size:15px;color:var(--muted);margin-top:4px}
+.card .tag{font-size:16px;color:var(--sea);font-weight:600}
+.card-row{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--line);padding-top:16px;margin-top:auto}
+.card .price{font-family:var(--display);font-size:42px;line-height:1}
+.card .lkr{font-size:14px;color:var(--muted);margin-top:6px}
+.card .specs{display:flex;gap:20px;font-size:14px;color:var(--muted)}
+.card .specs b{display:block;color:var(--ink);font-size:18px;font-weight:600}
+.pairnote{margin-top:26px;display:flex;gap:14px;align-items:flex-start;background:var(--sand);border-radius:6px;padding:20px 22px;font-size:17px}
+.pairnote svg{width:24px;height:24px;flex:none;color:var(--sea);margin-top:3px}
+
+#strategies{background:var(--sand)}
+.strats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.strat{background:var(--paper);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.strat img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.strat .sb{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+.strat h3{font-family:var(--display);font-size:30px;line-height:1.1}
+.strat .fit{font-size:14px;font-weight:600;color:var(--sea)}
+.strat p{font-size:16px;color:var(--muted)}
+.strat ul{list-style:none;margin:6px 0 0;padding:0;font-size:15px;display:grid;gap:4px}
+.strat li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sunset);margin-inline-end:8px;vertical-align:2px}
+@media (max-width:1020px){.strats{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.strats{grid-template-columns:1fr}}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--ink)}
+.step{padding:26px 22px 0 22px;border-inline-start:1px solid var(--line)}
+.step:first-child{border-inline-start:0;padding-inline-start:0}
+.step .n{font-family:var(--display);font-size:52px;line-height:1;color:var(--sea)}
+.step h3{font-size:19px;font-weight:700;margin-top:12px}
+.step p{font-size:16px;color:var(--muted);margin-top:6px}
+.opt{display:inline-block;font-size:12px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:1px 9px;margin-inline-start:6px;vertical-align:2px}
+@media (max-width:900px){.steps{grid-template-columns:1fr}.step{border-inline-start:0;border-bottom:1px solid var(--line);padding:20px 0;display:grid;grid-template-columns:60px 1fr;column-gap:12px}.step .n{grid-row:span 2}.step h3{margin-top:6px}}
+
+#calculator{background:#0F2225;color:#EDF2F0}
+#calculator .over{color:#7FD0D3}
+#calculator .lead{color:#A9BDBC}
+.modes{display:inline-flex;gap:4px;padding:5px;border-radius:999px;background:rgba(255,255,255,.07);margin-bottom:26px}
+.modes button{font:600 16px/1 var(--body);padding:12px 20px;border-radius:999px;border:0;background:transparent;color:#A9BDBC;cursor:pointer}
+.modes button[aria-selected="true"]{background:#fff;color:#0F2225}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:start}
+.calc>*{min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chip{font:600 15px/1 var(--body);padding:11px 16px;border-radius:999px;border:1.5px solid rgba(255,255,255,.18);background:transparent;color:#EDF2F0;cursor:pointer}
+.chip[aria-pressed="true"]{background:#7FD0D3;border-color:#7FD0D3;color:#0F2225}
+.field{display:grid;gap:6px;margin-bottom:20px}
+.field-row{display:flex;justify-content:space-between;gap:12px;font-size:16px}
+.field-row output{font-weight:700}
+.field-hint{font-size:13px;color:#A9BDBC}
+input[type=range]{width:100%;accent-color:#7FD0D3;height:28px;direction:rtl}
+.result{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:30px}
+.big-out{font-family:var(--display);font-size:clamp(76px,9vw,120px);line-height:.95;color:#7FD0D3}
+.big-label{font-size:16px;color:#A9BDBC;margin-top:8px}
+.rows{margin-top:22px}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-top:1px solid rgba(255,255,255,.12);font-size:16px}
+.rows b{font-weight:700}
+.disclaimer{font-size:13px;color:#A9BDBC;margin-top:18px;line-height:1.6}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+
+.faq-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(32px,6vw,96px)}
+.faq-grid>*{min-width:0}
+.faq-grid .sticky{position:sticky;top:110px;align-self:start}
+.faq-grid img{border-radius:6px;margin-top:30px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:18px;padding:24px 0;font-size:20px;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--display);font-size:34px;line-height:.7;color:var(--sea);transition:transform .2s ease;flex:none}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .ans{padding-bottom:24px;color:var(--muted);max-width:64ch;display:grid;gap:10px}
+.faq .ans ul{margin:0;padding-inline-start:20px}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr}.faq-grid .sticky{position:static}.faq-grid img{display:none}}
+
+.contact-sec{position:relative;color:#fff;background:#0d1c1f;overflow:hidden}
+.contact-sec>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.contact-sec::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(8,20,22,.85),rgba(8,20,22,.55))}
+.contact-sec .wrap{position:relative;z-index:1}
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,80px);align-items:start}
+.contact>*{min-width:0}
+.contact .lead{color:rgba(255,255,255,.85)}
+.contact .over{color:#9ADDE0}
+.phone{margin-top:30px}
+.phone span{font-size:14px;opacity:.8;display:block}
+.phone-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:6px}
+.phone-row b{font-family:var(--display);font-size:36px;font-weight:400;user-select:all}
+.mini{font:600 14px/1 var(--body);padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+form{display:grid;gap:22px;background:var(--paper);color:var(--ink);border-radius:8px;padding:clamp(24px,3vw,36px);box-shadow:var(--shadow)}
+fieldset{border:0;padding:0;margin:0}
+legend{font-weight:700;font-size:17px;padding:0;margin-bottom:10px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts label{position:relative}
+.opts input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.opts span{display:inline-block;padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);font-size:16px;background:var(--paper)}
+.opts input:checked+span{border-color:var(--sea);background:var(--wash);font-weight:600}
+.opts input:focus-visible+span{outline:3px solid var(--sea);outline-offset:2px}
+.text-in{width:100%;font:400 17px/1.4 var(--body);padding:14px 16px;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink)}
+.text-in:focus{border-color:var(--sea);outline:none}
+.preview{font-size:15px;white-space:pre-wrap;background:var(--sand);border-radius:10px;padding:14px 16px;color:var(--muted)}
+.form-actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.form-note{font-size:14px;color:var(--muted)}
+@media (max-width:900px){.contact{grid-template-columns:1fr}}
+
+footer{background:#0b1618;color:#C9D6D4;padding-block:52px calc(52px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;gap:16px}
+footer p{font-size:14px;max-width:96ch;opacity:.8}
+footer .brand{color:#fff}
+
+.fab{position:fixed;bottom:calc(18px + env(safe-area-inset-bottom,0px));left:calc(18px + env(safe-area-inset-left,0px));z-index:40;display:flex;align-items:center;gap:8px;background:#25D366;color:#06301A;text-decoration:none;font-weight:700;font-size:15px;padding:12px 18px 12px 14px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.fab svg{width:22px;height:22px}
+
+.scrim{position:fixed;inset:0;background:rgba(4,14,16,.62);z-index:70;opacity:0;transition:opacity .25s ease}
+.scrim.show{opacity:1}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(920px,100%);background:var(--paper);z-index:80;overflow-y:auto;transform:translateX(-100%);transition:transform .34s cubic-bezier(.2,.8,.2,1);box-shadow:var(--shadow);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.show{transform:none}
+.d-head{position:sticky;top:0;z-index:2;background:var(--paper);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;padding:14px max(24px,env(safe-area-inset-right,0px)) 14px max(24px,env(safe-area-inset-left,0px));font-size:15px;color:var(--muted)}
+.d-head .x{margin-inline-start:auto;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-size:22px;cursor:pointer;line-height:1}
+.d-body{padding:28px max(24px,env(safe-area-inset-right,0px)) 48px max(24px,env(safe-area-inset-left,0px));display:grid;gap:32px}
+.d-title{font-family:var(--display);font-size:clamp(50px,6vw,70px);line-height:1}
+.d-sub{color:var(--muted);font-size:16px;margin-top:6px}
+.d-top{display:grid;grid-template-columns:1fr 280px;gap:28px;align-items:start}
+.d-top>*{min-width:0}
+.d-price{font-family:var(--display);font-size:58px;line-height:1;margin-top:20px}
+.d-price small{display:block;font-family:var(--body);font-size:15px;color:var(--muted);margin-top:8px}
+.d-specs{display:grid;grid-template-columns:1fr 1fr;margin-top:18px;border-top:1px solid var(--line)}
+.d-specs div{padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--muted)}
+.d-specs div:nth-child(odd){padding-inline-end:12px}
+.d-specs b{display:block;color:var(--ink);font-size:18px;font-weight:600}
+.d-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.vid{background:#000;border-radius:8px;overflow:hidden;aspect-ratio:9/16;max-height:520px;width:100%}
+.vid video{width:100%;height:100%;display:block;object-fit:contain;background:#000}
+.vid-cap{font-size:13px;color:var(--muted);margin-top:8px}
+.d-block{background:var(--sand);border-radius:8px;padding:26px}
+.d-block h3{font-family:var(--display);font-size:32px}
+.concept{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;margin-top:18px;align-items:center}
+.concept>*{min-width:0}
+.concept img{border-radius:6px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.concept svg{width:100%;height:auto;display:block}
+.fp-cap{font-size:13px;color:var(--muted);margin-top:6px}
+.est{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+.est div{background:var(--paper);border-radius:8px;padding:14px 16px;font-size:14px;color:var(--muted)}
+.est b{display:block;font-family:var(--display);font-size:30px;color:var(--ink);font-weight:400;margin-top:2px}
+.est .hl b{color:var(--sea)}
+.d-note{font-size:14px;color:var(--muted);margin-top:14px}
+@media (max-width:680px){.d-top{grid-template-columns:1fr}.vid{max-height:460px;max-width:300px}.concept{grid-template-columns:1fr}.est{grid-template-columns:1fr}}
+.toast{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:999px;font-size:15px;z-index:90}
+</style>
+
+<div dir="rtl" lang="he">
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Swell Estates by Elna">
+      <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke-width="1.3"/><path d="M6 25c4 0 5-9 12-9 4.5 0 6.5 3 6.5 5.3 0 2-1.5 3.2-3.2 3.2-1.8 0-2.6-1.6-1.6-2.9"/><path d="M6 30.5c3 0 4.5-1.8 7-1.8s4 1.8 7 1.8 4.5-1.8 7-1.8 4 1.8 7 1.8" stroke-width="1.6"/></svg>
+      <span class="brand-word"><b>Swell Estates</b><i>by Elna</i></span>
+    </a>
+    <nav class="links" aria-label="ניווט">
+      <a href="#story">מי אנחנו</a>
+      <a href="#srilanka">סרי לנקה</a>
+      <a href="#explore">המפה</a>
+      <a href="#opportunities">שטחים</a>
+      <a href="#strategies">אסטרטגיות</a>
+      <a href="#calculator">מחשבון</a>
+      <a href="#faq">שאלות</a>
+    </nav>
+    <a class="btn" href="#contact">לשיחת היכרות</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero" aria-label="פתיחה">
+  <img class="poster" src="hero_poster.jpg" alt="">
+  <video autoplay muted loop playsinline preload="auto" poster="hero_poster.jpg" aria-hidden="true"><source src="hero.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <div class="hero-place">החוף הדרומי של סרי לנקה, מגאלה ועד מיריסה</div>
+    <h1>בית מול הגלים.</h1>
+    <p class="lead">קרקעות שאנחנו מאתרים ובודקים בעצמנו לאורך החוף הדרומי של סרי לנקה, אזור הגלישה המבוקש באי. ליווי מלא מהקרקע ועד המפתח: לבנות ולהשכיר, לגור, או להחזיק ולמכור.</p>
+    <div class="hero-cta">
+      <a class="btn btn-white" href="#opportunities">לשטחים הזמינים</a>
+      <a class="btn btn-glass" href="#explore">לסיור במפה</a>
+    </div>
+    <div class="hero-strip num">
+      <div><b>2.36M</b><span>תיירים בסרי לנקה ב־2025, שיא של כל הזמנים</span></div>
+      <div><b>$149</b><span>מחיר ממוצע ללילה בהשכרה קצרה באהנגמה, לב החוף הדרומי</span></div>
+      <div><b>300 מ׳</b><span>מהים, בשטח הקרוב ביותר שזמין עכשיו</span></div>
+      <div><b>₪124K</b><span>מחיר הכניסה לשטח</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap story">
+    <div class="collage">
+      <img class="a" src="villa2.jpg" alt="מרפסת של וילה טרופית בחוף הדרומי" loading="lazy">
+      <img class="b" src="surfers_water.jpg" alt="גולשים נכנסים למים בשקיעה" loading="lazy">
+    </div>
+    <div>
+      <div class="over">מי עומד מאחורי Swell Estates</div>
+      <h2 class="h2">אלנתן (אלנה). מנהל הפרויקט שלכם בסרי לנקה.</h2>
+      <p class="big">לפני שהוא ליווה משקיעים, אלנה עשה את כל הדרך בעצמו: קנה קרקע בחוף הדרומי, ניהל את הבנייה מהיסודות ועד המפתח, והכפיל את ההשקעה.</p>
+      <p>הפרויקט הראשון שלו לא היה עסקה על הנייר. הוא איתר את הקרקע, בדק אותה לעומק, וניהל את הרכישה דרך חברה מקומית ואת כל הרגולציה שמסביב. אחר כך עמד באתר יום אחרי יום: בחר קבלנים, ניהל פועלים, רכש חומרים, עקב אחרי התקציב ולוחות הזמנים, ופתר את הבעיות שצצות רק כשבונים בפועל בסרי לנקה.</p>
+      <p>מהניסיון הזה נולדה Swell Estates: ליווי שמשלב את הזמינות של איש מקצוע ישראלי עם הידע המעשי של מי שכבר בנה כאן, ויודע מה עובד ומה לא.</p>
+      <div class="proof num"><span>×2 על ההשקעה הראשונה</span><span>בית שנבנה מאפס</span><span>רכישה דרך חברה מקומית</span><span>ליווי בעברית</span></div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="skills-head">
+      <h3 class="h3">מה אלנה מביא לפרויקט שלכם</h3>
+      <p>הידע שנצבר בשטח, בכל אחד מהשלבים שבהם פרויקטים בחו״ל נוטים להיתקע.</p>
+    </div>
+    <div class="skills">
+      <div><h4>איתור והערכת קרקע</h4><p>גישה, תשתיות, מרחק מהים, ייעוד, ומה באמת אפשר לבנות על השטח. ולא פחות חשוב: לזהות מתי לוותר על שטח.</p></div>
+      <div><h4>בדיקת זכויות ורכישה</h4><p>עבודה מול הנוטריון, עורך הדין והחברה המקומית: היסטוריית בעלות, מפת מדידה, מבנה העסקה ורישום מסודר.</p></div>
+      <div><h4>רגולציה ואישורים</h4><p>היכרות מעשית עם התהליכים מול הרשויות המקומיות: היתרים, חיבורי חשמל ומים, ותיאום מול כל הגורמים בשטח.</p></div>
+      <div><h4>ניהול בנייה</h4><p>בחירת קבלנים לפי עבודות קודמות, חוזים מסודרים, תשלומים לפי אבני דרך ופיקוח צמוד על איכות הביצוע.</p></div>
+      <div><h4>חומרים ותקציב</h4><p>יודע מה עולה כמה בסרי לנקה, איפה קונים ואיך לא משלמים מחיר של תייר. כל הוצאה מתועדת ומדווחת.</p></div>
+      <div><h4>רשת מקומית</h4><p>קבלנים, פועלים, ספקים ואנשי מקצוע שהוא כבר עבד איתם בפועל, בפרויקט אמיתי, ולא רשימה מהאינטרנט.</p></div>
+    </div>
+
+    <div class="principles">
+      <div class="pr-title"><h3 class="h3">עקרונות הליווי</h3><p>מסגרת עבודה אחת, מהשיחה הראשונה ועד מימוש ההשקעה.</p></div>
+      <div class="pr"><h4>בדיקת נאותות מקצועית</h4><p>כל הזדמנות עוברת בחינה של מיקום, נגישות, תשתיות ומעמד משפטי לפני שהיא מוצגת למשקיע, כך שההחלטה נשענת על תמונה מלאה.</p></div>
+      <div class="pr"><h4>שקיפות פיננסית</h4><p>מחירים, הסכמים ותקציבים מוצגים במלואם מראש. כל שלב מתקדם רק לאחר אישור שלכם.</p></div>
+      <div class="pr"><h4>בקרה ודיווח שוטף</h4><p>מעקב אחר התקדמות מול לוח הזמנים והתקציב, עם דיווח סדור בעברית וזמינות מלאה לכל שאלה.</p></div>
+      <div class="pr"><h4>ליווי לכל אורך חיי הנכס</h4><p>גם אחרי מסירת המפתח: ניהול השכרה, תחזוקה וליווי במימוש ההשקעה, בהתאם לאסטרטגיה שנבחרה.</p></div>
+    </div>
+
+    <blockquote class="quote-big">
+      <p>״בסרי לנקה כמעט הכול אפשרי, אבל רק אם יש מישהו בשטח שיודע איך זה באמת עובד. זה התפקיד שלי.״</p>
+      <cite>אלנתן (אלנה), מייסד Swell Estates</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section id="srilanka">
+  <div class="wrap">
+    <div class="head">
+      <div class="over">סרי לנקה במבט אחד</div>
+      <h2 class="h2">אי אחד, כל העולם בתוכו</h2>
+      <p class="lead">חופים טרופיים, הרי תה, מקדשים עתיקים ופארקים עם נמרים ופילים, במדינה בגודל של פחות מפי שלושה מישראל. התיירות שוברת שיאים, והחוף הדרומי הוא אחד המקומות המבוקשים בה.</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><img src="beach_aerial.jpg" alt="מבט מהאוויר על מפרץ בחוף הדרומי" loading="lazy"><div><b class="num">2.36M</b><h3>שיא תיירות ב־2025</h3><p>עלייה של 15% לעומת 2024. היעד הממשלתי ל־2026: 3 מיליון תיירים.</p></div></div>
+      <div class="fact"><img src="weligama_boards.jpg" alt="גלשנים על החוף בוליגמה" loading="lazy"><div><b>נוב׳–אפר׳</b><h3>העונה בחוף הדרומי</h3><p>עונת הגלישה והתיירות בדרום. דצמבר עד מרץ הם חודשי השיא בהשכרה.</p></div></div>
+      <div class="fact"><img src="sigiriya.jpg" alt="סלע סיגיריה מהאוויר" loading="lazy"><div><b class="num">8</b><h3>אתרי מורשת עולמית</h3><p>סיגיריה, מבצר גאלה, העיר הקדושה קנדי ועוד, כולם במרחק נסיעה מהחוף.</p></div></div>
+      <div class="fact"><img src="tuktuk.jpg" alt="טוק־טוק מול הים" loading="lazy"><div><b>כ־2 שעות</b><h3>משדה התעופה לחוף הדרומי</h3><p>ברובו בכביש מהיר. השעון בסרי לנקה מקדים את ישראל בשעתיים וחצי עד שלוש וחצי.</p></div></div>
+    </div>
+    <p class="src">מקורות: <a href="https://www.ft.lk/top-story/Tourism-arrivals-grow-by-15-to-2-36-m-record-high-in-2025/26-786582" target="_blank" rel="noopener">Daily FT</a>, <a href="https://airroi.com/airbnb-data/sri-lanka/southern-province/ahangama" target="_blank" rel="noopener">AirROI</a>, <a href="https://girlonazebra.com/ahangama/" target="_blank" rel="noopener">Girl on a Zebra</a></p>
+  </div>
+</section>
+
+<section id="explore">
+  <div class="wrap">
+    <div class="head">
+      <div class="over">המפה</div>
+      <h2 class="h2">מהאי כולו, עד השטח הבא שלכם</h2>
+      <p class="lead">התחילו בסרי לנקה כולה, ירדו לחוף הדרומי שבו אנחנו פועלים, ומשם לאהנגמה, שבה נמצאים השטחים הזמינים כרגע, עם ספוטי הגלישה, בתי הקפה והמסעדות. לחצו על כל נקודה כדי לראות מה יש בה.</p>
+    </div>
+    <div class="crumbs" id="crumbs">
+      <button type="button" data-l="0" aria-current="true">סרי לנקה</button><span class="sep">‹</span>
+      <button type="button" data-l="1" aria-current="false">החוף הדרומי</button><span class="sep">‹</span>
+      <button type="button" data-l="2" aria-current="false">אהנגמה</button>
+    </div>
+    <div class="explorer">
+      <div>
+        <div class="stage"><svg id="mapsvg" viewBox="0 0 1000 760" role="img" aria-label="מפה אינטראקטיבית"></svg><div class="hint" id="hint"></div></div>
+        <div class="filters" id="filters" hidden>
+          <button type="button" data-f="plot" aria-pressed="true"><i style="background:var(--sea)"></i>השטחים שלנו</button>
+          <button type="button" data-f="surf" aria-pressed="true"><i style="background:var(--sunset)"></i>ספוטי גלישה</button>
+          <button type="button" data-f="food" aria-pressed="true"><i style="background:#8A5A9E"></i>קפה, אוכל ובר</button>
+        </div>
+        <p class="legend-note">מפה סכמטית להמחשה. המיקום המדויק של כל שטח נמצא בתיק השטח.</p>
+      </div>
+      <aside class="panel" id="panel" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-label="החיים בחוף הדרומי">
+  <video autoplay muted loop playsinline preload="metadata" poster="surf_poster.jpg" aria-hidden="true"><source src="surf.mp4" type="video/mp4"></video>
+  <div class="wrap">
+    <div class="over" style="color:#9ADDE0">החיים כאן</div>
+    <h2 class="h2">גלישה בבוקר. שקיעה בערב. תפוסה כל העונה.</h2>
+    <p>החוף הדרומי כבר לא סוד. גולשים, משפחות ועובדים מרחוק מגיעים לגאלה, לאהנגמה, לוליגמה ולמיריסה מכל העולם, וזה בדיוק מה שמחזיק את הביקוש לווילות.</p>
+  </div>
+</section>
+
+<section aria-label="גלריה" style="padding-block:clamp(56px,7vw,96px) 0">
+  <div class="wrap">
+    <div class="mosaic">
+      <figure class="m1"><img src="stilt.jpg" alt="דייגים על כלונסאות" loading="lazy"><figcaption>דייגי הכלונסאות, בין קוגלה לאהנגמה</figcaption></figure>
+      <figure class="m2"><img src="weligama_beach.jpg" alt="מפרץ וליגמה" loading="lazy"><figcaption>מפרץ וליגמה</figcaption></figure>
+      <figure class="m3"><img src="beach_food.jpg" alt="מגש משקאות על החוף" loading="lazy"><figcaption>חיי החוף</figcaption></figure>
+      <figure class="m4"><img src="palm.jpg" alt="עצי דקל" loading="lazy"></figure>
+      <figure class="m5"><img src="galle2.jpg" alt="חומות מבצר גאלה" loading="lazy"><figcaption>מבצר גאלה</figcaption></figure>
+      <figure class="m6"><img src="villa1.jpg" alt="וילה עם בריכה בסגנון סרי לנקי" loading="lazy"><figcaption>וילות בסגנון החוף הדרומי</figcaption></figure>
+      <figure class="m7"><img src="sunset_waves.jpg" alt="שקיעה מעל הגלים" loading="lazy"><figcaption>שקיעה על החוף הדרומי</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="opportunities">
+  <div class="wrap">
+    <div class="head">
+      <div class="over">זמין עכשיו</div>
+      <h2 class="h2">ארבעה שטחים באהנגמה, דקות מהים</h2>
+      <p class="lead" style="color:var(--ink)">אנחנו פועלים לאורך כל החוף הדרומי, מגאלה ועד מיריסה. אלה ההזדמנויות שפתוחות כרגע, ושטחים חדשים מתווספים כל הזמן.</p>
+      <p class="lead">כל שטח נבדק בשטח ומגיע עם סרטון, מיקום מדויק ונתונים מלאים. פתחו את התיק של כל שטח כדי לראות מה אפשר לבנות עליו ומה הוא יכול להניב.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+    <div class="pairnote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/></svg>
+      <div><b>שטחים 2 ו־3 נמצאים כ־60 מטר זה מזה.</b> יחד הם כ־1,318 מ״ר, מספיק לפרויקט של כמה וילות או לבית הארחה בוטיק.</div>
+    </div>
+  </div>
+</section>
+
+<section id="strategies">
+  <div class="wrap">
+    <div class="head">
+      <div class="over">ארבע דרכים להשקיע</div>
+      <h2 class="h2">בחרו אסטרטגיה, אנחנו נבנה את הדרך</h2>
+    </div>
+    <div class="strats">
+      <div class="strat"><img src="villa2.jpg" alt="מרפסת של וילה טרופית" loading="lazy"><div class="sb"><h3>לבנות ולהשכיר</h3><div class="fit">שטחים 1, 2, 4</div><p>וילה של 2–3 חדרים עם בריכה, להשכרה קצרה לגולשים ולתיירים.</p><ul><li>הכנסה שוטפת</li><li>ניהול השכרה מלא, אופציונלי</li></ul></div></div>
+      <div class="strat"><img src="surf_aerial.jpg" alt="גולשים מהאוויר" loading="lazy"><div class="sb"><h3>בית שגם מכניס</h3><div class="fit">שטחים 1, 2, 3</div><p>בית לחופשות שלכם, שמושכר בחודשים שאתם לא שם. המסלול שאלנה עשה בעצמו.</p><ul><li>שימוש עצמי</li><li>החזר עלויות מהשכרה</li></ul></div></div>
+      <div class="strat"><img src="tea1.jpg" alt="מטעי תה בהרים" loading="lazy"><div class="sb"><h3>להחזיק ולמכור</h3><div class="fit">כל השטחים</div><p>קונים קרקע במחיר של היום, מחזיקים כמה שנים ומוכרים כשהאזור ממשיך להתפתח. בלי לבנות.</p><ul><li>השקעה הונית פשוטה</li><li>בלי ניהול שוטף</li></ul></div></div>
+      <div class="strat"><img src="arugam.jpg" alt="סירות דייגים על החוף" loading="lazy"><div class="sb"><h3>יזמות ופרויקטים</h3><div class="fit">שטח 4, או 2 ו־3 יחד</div><p>כמה יחידות, בית הארחה או פרויקט בוטיק. מתאים לשותפויות ולמשקיעים עסקיים.</p><ul><li>יותר יחידות על אותה קרקע</li><li>ליווי תכנון וביצוע</li></ul></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="head">
+      <div class="over">איך זה עובד</div>
+      <h2 class="h2">מהקרקע ועד המפתח</h2>
+      <p class="lead">אפשר לקנות קרקע בלבד, ואפשר ללכת את כל הדרך. בכל שלב יודעים איפה הפרויקט עומד, עם עדכונים, תמונות וסרטונים מהשטח.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>שיחת היכרות</h3><p>תקציב, מטרה ולוח זמנים, ואיזו אסטרטגיה מתאימה לכם.</p></div>
+      <div class="step"><div class="n">2</div><h3>איתור ובדיקה</h3><p>שטחים שנבדקו בשטח, עם סרטון, מיקום ונתונים. אפשר גם שיחת וידאו מהקרקע.</p></div>
+      <div class="step"><div class="n">3</div><h3>רכישה</h3><p>דרך חברה מקומית, עם נוטריון ועורך דין. כל מסמך מוסבר לפני החתימה.</p></div>
+      <div class="step"><div class="n">4</div><h3>תכנון ובנייה</h3><p>תכנון, קבלנים, חומרים ופיקוח צמוד, עם תשלומים לפי אבני דרך.</p></div>
+      <div class="step"><div class="n">5</div><h3>ניהול או מכירה<span class="opt">אופציונלי</span></h3><p>השכרה וטיפול שוטף בנכס, או ליווי במכירה כשתחליטו לממש.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="calculator">
+  <div class="wrap">
+    <div class="head">
+      <div class="over">מחשבון</div>
+      <h2 class="h2">תריצו את המספרים בעצמכם</h2>
+      <p class="lead">שני תרחישים: בנייה והשכרה, או החזקת הקרקע ומכירה. ברירות המחדל מבוססות על נתוני שוק עדכניים, ואת ההנחות אתם קובעים.</p>
+    </div>
+    <div class="modes" role="tablist" aria-label="סוג חישוב">
+      <button role="tab" type="button" id="modeRent" aria-selected="true">בנייה והשכרה</button>
+      <button role="tab" type="button" id="modeHold" aria-selected="false">החזקה ומכירה</button>
+    </div>
+    <div class="calc">
+      <div>
+        <div class="chips" id="calcChips" role="group" aria-label="בחירת שטח"></div>
+        <div id="rentFields">
+          <div class="field"><div class="field-row"><label for="cUnits">מספר וילות על השטח</label><output id="oUnits"></output></div><input type="range" id="cUnits" min="1" max="3" step="1"></div>
+          <div class="field"><div class="field-row"><label for="cArea">שטח בנוי כולל</label><output id="oArea"></output></div><input type="range" id="cArea" min="80" max="400" step="10"></div>
+          <div class="field"><div class="field-row"><label for="cCost">עלות בנייה למ״ר, כולל גימור</label><output id="oCost"></output></div><input type="range" id="cCost" min="2000" max="6000" step="100"><div class="field-hint">תלוי ברמת הגימור. לכל פרויקט נבנה הצעה מדויקת.</div></div>
+          <div class="field"><div class="field-row"><label for="cNight">מחיר ללילה, לכל וילה</label><output id="oNight"></output></div><input type="range" id="cNight" min="200" max="1200" step="10"><div class="field-hint">הממוצע באהנגמה: כ־$149 ללילה</div></div>
+          <div class="field"><div class="field-row"><label for="cOcc">תפוסה שנתית</label><output id="oOcc"></output></div><input type="range" id="cOcc" min="20" max="80" step="1"><div class="field-hint">הממוצע באהנגמה: 38%</div></div>
+          <div class="field"><div class="field-row"><label for="cExp">הוצאות שוטפות: ניהול, ניקיון ועמלות</label><output id="oExp"></output></div><input type="range" id="cExp" min="15" max="45" step="1"></div>
+        </div>
+        <div id="holdFields" hidden>
+          <div class="field"><div class="field-row"><label for="hYears">שנות החזקה</label><output id="oYears"></output></div><input type="range" id="hYears" min="1" max="15" step="1"></div>
+          <div class="field"><div class="field-row"><label for="hGrowth">עליית ערך שנתית משוערת</label><output id="oGrowth"></output></div><input type="range" id="hGrowth" min="0" max="20" step="0.5"><div class="field-hint">זו הנחה שלכם, לא תחזית. שנו אותה כדי לראות תרחיש שמרני ותרחיש אופטימי.</div></div>
+          <div class="field"><div class="field-row"><label for="hBuyCost">עלויות רכישה: מס בולים, נוטריון ועו״ד</label><output id="oBuyCost"></output></div><input type="range" id="hBuyCost" min="3" max="8" step="0.5"><div class="field-hint">מס בולים של כ־4% ועלויות משפטיות של 1%–3%</div></div>
+          <div class="field"><div class="field-row"><label for="hSellCost">עלויות מכירה</label><output id="oSellCost"></output></div><input type="range" id="hSellCost" min="0" max="6" step="0.5"></div>
+        </div>
+      </div>
+      <div class="result" aria-live="polite">
+        <div class="big-out num" id="rBig"></div>
+        <div class="big-label" id="rBigLabel"></div>
+        <div class="rows num" id="rRows"></div>
+        <p class="disclaimer" id="rNote"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap faq-grid">
+    <div class="sticky">
+      <div class="over">שאלות של משקיעים</div>
+      <h2 class="h2">מה חשוב לדעת לפני שקונים</h2>
+      <p class="lead" style="margin-top:16px">תשובות כלליות, לא ייעוץ משפטי או מיסוי. בכל עסקה אנחנו עובדים עם נוטריון ועורך דין מקומיים, וממליצים להתייעץ גם עם רואה חשבון בישראל.</p>
+      <img src="galle.jpg" alt="מבצר גאלה מהאוויר" loading="lazy">
+    </div>
+    <div class="faq">
+      <details open><summary>מה מבנה הבעלות למשקיע זר?</summary><div class="ans"><p>מאז 2013 זרים לא יכולים להחזיק קרקע בבעלות מלאה (Freehold) בסרי לנקה. המסלולים המקובלים הם חכירה לתקופה של עד 99 שנה, או השקעה בחברה מקומית שמחזיקה בקרקע, כשחלק הזרים בה הוא עד 50%. הרכישות שלנו מתבצעות דרך חברה מקומית שאנחנו עובדים איתה, ואת המבנה המדויק לכל עסקה בונים עם עורך הדין.</p></div></details>
+      <details><summary>אילו עלויות יש מעבר למחיר הקרקע?</summary><div class="ans"><ul><li>מס בולים: 3% על 100,000 הרופי הראשונים ו־4% על היתרה. הקונה משלם.</li><li>נוטריון, רישום, בדיקת זכויות ושכר טרחה: בדרך כלל 1%–3% מערך העסקה.</li><li>בבנייה: תכנון, היתרים, חיבורי תשתית ופיקוח, שמתומחרים לכל פרויקט.</li></ul></div></details>
+      <details><summary>איך נבדקות הזכויות בקרקע?</summary><div class="ans"><p>הנוטריון בודק את היסטוריית הבעלות ברשם המקרקעין, והשטר נרשם שם כדי להגן על הזכויות מול צד שלישי. לצד זה אנחנו בודקים בשטח את הגבולות לפי מפת המדידה, את דרך הגישה, חשמל ומים, ואת מה שמותר לבנות.</p></div></details>
+      <details><summary>איך מעבירים את הכסף?</summary><div class="ans"><p>הכספים צריכים להגיע מחו״ל דרך ערוצים בנקאיים רשמיים. אין מימון בנקאי מקומי לזרים לרכישת קרקע, ולכן ההשקעה ממומנת מהון עצמי או ממימון מחוץ לסרי לנקה. לגבי דיווח ומיסוי בישראל, מומלץ להתייעץ עם רואה חשבון.</p></div></details>
+      <details><summary>אפשר לקנות קרקע, להחזיק כמה שנים ולמכור?</summary><div class="ans"><p>כן, זו אחת האסטרטגיות שאנחנו מלווים. כדאי לדעת: על רווח הון במכירה חל מס של 10% בסרי לנקה, קרקע שבידי זרים לא ניתנת לשעבוד בחמש השנים הראשונות, ושוק הקרקעות פחות נזיל מבישראל, כך שמכירה יכולה לקחת זמן. את התרחיש אפשר לבדוק במחשבון.</p></div></details>
+      <details><summary>איך מנוהל הסיכון בבנייה מרחוק?</summary><div class="ans"><p>חוזים מסודרים עם הקבלנים, תשלומים לפי אבני דרך ולא מראש, פיקוח צמוד באתר, ודיווח שוטף בעברית עם תמונות וסרטונים. זה בדיוק התהליך שאלנה עבר בפרויקט שלו.</p></div></details>
+      <details><summary>מי מנהל את הנכס אחרי הבנייה?</summary><div class="ans"><p>אפשר לנהל בעצמכם, ואפשר לקבל ניהול מלא: פרסום, הזמנות, צ׳ק־אין, ניקיון ותחזוקה. עלויות הניהול נכללות בהוצאות השוטפות במחשבון.</p></div></details>
+      <details><summary>מה זה פרץ׳ (Perch)?</summary><div class="ans"><p>יחידת השטח המקובלת בסרי לנקה. פרץ׳ אחד הוא כ־25.3 מ״ר, כלומר 20 פרץ׳ הם כ־506 מ״ר.</p></div></details>
+      <p class="src">מקור לנתוני הבעלות והמיסוי: <a href="https://www.multilaw.com/Multilaw/RealEstate/Real_Estate_Guide_Sri_Lanka.aspx" target="_blank" rel="noopener">Multilaw Real Estate Guide, סרי לנקה (יולי 2025)</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-sec" id="contact">
+  <img src="hero_sunset.jpg" alt="" loading="lazy">
+  <div class="wrap contact">
+    <div>
+      <div class="over">שיחת היכרות</div>
+      <h2 class="h2">בואו נמצא לכם את השטח הנכון</h2>
+      <p class="lead" style="margin-top:18px">ענו על כמה שאלות קצרות, ובלחיצה אחת תיפתח הודעת וואטסאפ לאלנה עם כל הפרטים.</p>
+      <div class="phone"><span>או ישירות בוואטסאפ</span><div class="phone-row"><b class="num ltr" id="phoneText">+972 54-765-8608</b><button class="mini" type="button" id="copyPhone">העתקת המספר</button></div></div>
+    </div>
+    <form id="lead" novalidate>
+      <fieldset><legend>מה המטרה?</legend><div class="opts">
+        <label><input type="radio" name="goal" value="לבנות ולהשכיר" checked><span>לבנות ולהשכיר</span></label>
+        <label><input type="radio" name="goal" value="בית שגם מכניס"><span>בית שגם מכניס</span></label>
+        <label><input type="radio" name="goal" value="להחזיק ולמכור"><span>להחזיק ולמכור</span></label>
+        <label><input type="radio" name="goal" value="פרויקט יזמי"><span>פרויקט יזמי</span></label>
+      </div></fieldset>
+      <fieldset><legend>תקציב כולל משוער</legend><div class="opts">
+        <label><input type="radio" name="budget" value="עד 250 אלף ש״ח"><span>עד ₪250K</span></label>
+        <label><input type="radio" name="budget" value="250–600 אלף ש״ח" checked><span>₪250–600K</span></label>
+        <label><input type="radio" name="budget" value="600 אלף עד מיליון ש״ח"><span>₪600K–1M</span></label>
+        <label><input type="radio" name="budget" value="מעל מיליון ש״ח"><span>מעל ₪1M</span></label>
+      </div></fieldset>
+      <fieldset><legend>איזה שטח מעניין אתכם?</legend><div class="opts" id="plotOpts">
+        <label><input type="radio" name="plot" value="פתוח להצעות" checked><span>פתוח/ה להצעות</span></label>
+      </div></fieldset>
+      <div><label for="fname" style="font-weight:700;display:block;margin-bottom:8px">שם</label><input class="text-in" id="fname" name="fname" autocomplete="name" placeholder="איך לפנות אליכם?"></div>
+      <div class="preview" id="preview" aria-live="polite"></div>
+      <div class="form-actions">
+        <a class="btn btn-sea" id="waSend" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2Z"/></svg>שליחה לאלנה בוואטסאפ</a>
+        <button class="mini" type="button" id="copyMsg">העתקת ההודעה</button>
+      </div>
+      <p class="form-note">אם הוואטסאפ לא נפתח, העתיקו את ההודעה ושלחו אותה למספר שמופיע כאן.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="20" cy="20" r="18" stroke-width="1.3"/><path d="M6 25c4 0 5-9 12-9 4.5 0 6.5 3 6.5 5.3 0 2-1.5 3.2-3.2 3.2-1.8 0-2.6-1.6-1.6-2.9"/><path d="M6 30.5c3 0 4.5-1.8 7-1.8s4 1.8 7 1.8 4.5-1.8 7-1.8 4 1.8 7 1.8" stroke-width="1.6"/></svg><span class="brand-word"><b>Swell Estates</b><i>by Elna</i></span></a>
+    <p>החוף הדרומי, סרי לנקה. וואטסאפ: <span class="ltr">+972 54-765-8608</span></p>
+    <p>המידע באתר נועד להמחשה ואינו מהווה ייעוץ השקעות, ייעוץ משפטי או ייעוץ מס, ואינו התחייבות לתשואה או לעליית ערך. מחירי הקרקעות נקבעים על ידי הבעלים, נכונים ל־30.10.2026 ועשויים להשתנות.</p>
+    <p>צילומי אווירה: Unsplash (Sander Traa, Dylan Shaw, Hendrik Cornelissen, Oliver Frsh, Thilina Alagiyawanna, Jerry Kavan, Daniel Klein, Abdulla Faiz, Anupa Uthsara, Sam Wermut, Tomas Malik, Kaushali Kusumapala, Manun Thakur, Sarmat Batagov, Drew Farwell, Ale Romo, Sahan Jayasuriya, Dinuka Lankaloka). וידאו: Pexels. צילומי השטחים: Swell Estates.</p>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="וואטסאפ לאלנה"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.1 1.2Z"/></svg>וואטסאפ</a>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden></aside>
+</div>
+
+<script>
+document.documentElement.lang='he';document.documentElement.dir='rtl';
+const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
+const FONT='Assistant,Arial,sans-serif', SERIF='Bellefair,Times New Roman,serif';
+
+/* ---------- DATA: add a new plot by adding an object here ---------- */
+const PHONE='972547658608', PRICE_DATE='30.10.2026', M2=25.29;
+const PLOTS=[
+  {id:1,road:'Imaduwa Road',perches:18.6,lkrPerPerch:750000,lkr:13500000,ils:124344,beach:'1.5 ק״מ',lat:5.979272365570068,lon:80.36846160888672,tag:'מחיר הכניסה הנמוך ביותר',status:'זמין',concept:{title:'וילה של 2 חדרים עם בריכה',units:1,area:140,nightly:450,fp:[140]}},
+  {id:2,road:'Viskam Mawatha',perches:20,lkrPerPerch:1000000,lkr:20000000,ils:184213,beach:'1 ק״מ',lat:5.978475570678711,lon:80.36610412597656,tag:'צמוד לשטח 3, אפשר לאחד',status:'זמין',concept:{title:'וילה של 2–3 חדרים עם בריכה',units:1,area:160,nightly:480,fp:[160]}},
+  {id:3,road:'Viskam Mawatha',perches:32.12,lkrPerPerch:800000,lkr:25600000,ils:235793,beach:'1 ק״מ',lat:5.977962970733643,lon:80.36621856689453,tag:'812 מ״ר, מקום לווילה מרווחת',status:'זמין',concept:{title:'וילה מרווחת של 3–4 חדרים וגינה טרופית',units:1,area:220,nightly:600,fp:[220]}},
+  {id:4,road:'Goviyapana',perches:34,lkrPerPerch:500000,lkr:17000000,ils:156581,beach:'300 מ׳',lat:5.968614101409912,lon:80.37721252441406,tag:'הכי קרוב לים, המחיר הנמוך למ״ר',status:'זמין',concept:{title:'שתי וילות של 2 חדרים',units:2,area:240,nightly:420,fp:[120,120]}}
+];
+const DEF={cost:3000,occ:40,exp:30,years:5,growth:8,buy:5,sell:3};
+PLOTS.forEach(p=>{p.m2=Math.round(p.perches*M2);p.ilsM2=Math.round(p.ils/p.m2);p.video=`plot${p.id}.mp4`;p.poster=`plot${p.id}.jpg`;p.gmaps=`https://www.google.com/maps?q=${p.lat},${p.lon}`;});
+const fmt=n=>'₪'+Math.round(n).toLocaleString('en-US');
+const fmtK=n=>Math.abs(n)>=1e6?'₪'+(n/1e6).toFixed(2).replace(/\.?0+$/,'')+'M':'₪'+Math.round(n/1000)+'K';
+const wa=t=>`https://wa.me/${PHONE}?text=${encodeURIComponent(t)}`;
+function estimate(p,o={}){const units=o.units??p.concept.units,area=o.area??p.concept.area,cost=o.cost??DEF.cost,night=o.night??p.concept.nightly,occ=o.occ??DEF.occ,exp=o.exp??DEF.exp;
+  const build=area*cost,total=p.ils+build,gross=night*365*(occ/100)*units,net=gross*(1-exp/100);return {units,area,cost,night,occ,exp,build,total,gross,net,yld:net/total*100,payback:total/net};}
+
+const nav=$('#nav');const onScroll=()=>nav.classList.toggle('solid',scrollY>40);addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+$('#cards').innerHTML=PLOTS.map(p=>`
+<article class="card">
+  <button class="thumb" type="button" data-open="${p.id}" aria-label="תיק שטח ${p.id}">
+    <img src="${p.poster}" alt="צילום מהשטח, שטח ${p.id}">
+    <span class="badge">שטח ${p.id}</span><span class="status">${p.status}</span>
+    <span class="play"><svg viewBox="0 0 12 12" fill="currentColor"><path d="M3 1.5v9l7.5-4.5z"/></svg>סרטון מהשטח</span>
+  </button>
+  <div class="card-body">
+    <div><h3><span class="ltr">${p.road}</span></h3><div class="road">אהנגמה, ${p.beach} מהים</div></div>
+    <div class="tag">${p.tag}</div>
+    <div class="card-row">
+      <div><div class="price num">${fmt(p.ils)}</div><div class="lkr num"><span class="ltr">LKR ${p.lkr.toLocaleString('en-US')}</span></div></div>
+      <div class="specs num"><div>גודל<b>${p.m2} מ״ר</b></div><div>למ״ר<b>${fmt(p.ilsM2)}</b></div></div>
+    </div>
+    <a class="btn btn-line" href="#plot-${p.id}" style="align-self:flex-start">לתיק השטח המלא</a>
+  </div>
+</article>`).join('');
+$$('[data-open]').forEach(b=>b.onclick=()=>openPlot(+b.dataset.open));
+
+/* ---------- map explorer ---------- */
+function smooth(pts,closed){const n=pts.length;let d=`M${pts[0][0].toFixed(1)},${pts[0][1].toFixed(1)}`;const P=i=>pts[(i+n)%n];
+  for(let i=0;i<(closed?n:n-1);i++){const p0=closed?P(i-1):pts[Math.max(i-1,0)],p1=P(i),p2=P(i+1),p3=closed?P(i+2):pts[Math.min(i+2,n-1)];
+    const c1=[p1[0]+(p2[0]-p0[0])/6,p1[1]+(p2[1]-p0[1])/6],c2=[p2[0]-(p3[0]-p1[0])/6,p2[1]-(p3[1]-p1[1])/6];d+=`C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0].toFixed(1)},${p2[1].toFixed(1)}`;}
+  return d+(closed?'Z':'');}
+const T=(x,y,s,o={})=>`<text x="${x}" y="${y}" font-family="${o.f||FONT}" font-size="${o.size||15}" font-weight="${o.w||500}" fill="${o.fill||'var(--ink)'}" text-anchor="${o.a||'middle'}" ${o.op?`opacity="${o.op}"`:''} ${o.halo?'paint-order="stroke" stroke="var(--land)" stroke-width="4"':''}>${s}</text>`;
+
+const ISL=[[80.05,9.82],[80.25,9.83],[80.45,9.62],[80.62,9.45],[80.82,9.27],[80.98,8.95],[81.10,8.75],[81.23,8.57],[81.32,8.35],[81.45,8.05],[81.62,7.85],[81.70,7.71],[81.80,7.40],[81.85,7.10],[81.83,6.84],[81.78,6.62],[81.70,6.52],[81.50,6.30],[81.28,6.18],[81.12,6.12],[80.90,6.03],[80.79,6.02],[80.59,5.92],[80.43,5.97],[80.22,6.03],[80.10,6.20],[80.00,6.42],[79.96,6.58],[79.88,6.85],[79.84,7.21],[79.80,7.58],[79.80,7.90],[79.72,8.20],[79.78,8.55],[79.92,8.90],[79.97,9.10],[80.12,9.35],[80.22,9.50],[80.05,9.62],[79.95,9.72]];
+const L0={x0:78.9,x1:82.5,y0:10.05,y1:5.65};
+const P0=(lon,lat)=>[(lon-L0.x0)/(L0.x1-L0.x0)*1000,(L0.y0-lat)/(L0.y0-L0.y1)*760];
+const SPOTS0=[
+  {id:'col',n:'קולומבו',lon:79.85,lat:6.93,kind:'הבירה הכלכלית',t:'העיר הגדולה ושדה התעופה הבינלאומי. משם כשעתיים נסיעה לחוף הדרומי, רובן בכביש המהיר.',img:null},
+  {id:'sig',n:'סיגיריה',lon:80.76,lat:7.957,kind:'אתר מורשת עולמית',t:'מבצר הסלע מהמאה החמישית, אחד הסמלים של סרי לנקה.',img:'sigiriya.jpg'},
+  {id:'min',n:'מינריה',lon:80.88,lat:8.08,kind:'פילים בטבע',t:'האזור שבו מתקבצים מאות פילים בעונה היבשה, ליד המשולש התרבותי.',img:'elephant.jpg'},
+  {id:'kan',n:'קנדי',lon:80.63,lat:7.29,kind:'עיר המקדשים',t:'מקדש השן, העיר העתיקה ושער להרי התה.',img:'kandy.jpg'},
+  {id:'tea',n:'נוורה אליה',lon:80.78,lat:6.97,kind:'מטעי תה',t:'הלב של תעשיית התה של ציילון, גבוה בהרים.',img:'tea1.jpg'},
+  {id:'ell',n:'אלה',lon:81.05,lat:6.87,kind:'הרים ורכבות',t:'גשר תשע הקשתות, מסלולי הליכה והרכבת שחוצה את ההרים.',img:'ella.jpg'},
+  {id:'yal',n:'יאלה',lon:81.45,lat:6.37,kind:'ספארי',t:'הפארק הלאומי המפורסם בסרי לנקה, ומהמקומות הטובים בעולם לראות נמרים.',img:'leopard.jpg'},
+  {id:'aru',n:'ארוגם ביי',lon:81.83,lat:6.84,kind:'גלישה בחוף המזרחי',t:'בירת הגלישה של החוף המזרחי, עם עונה הפוכה לדרום: אפריל עד אוקטובר.',img:'arugam.jpg'},
+  {id:'gal',n:'גאלה',lon:80.22,lat:6.03,kind:'מבצר היסטורי',t:'העיר העתיקה בתוך מבצר מהתקופה הקולוניאלית, אתר מורשת עולמית. 18 ק״מ מאהנגמה.',img:'galle2.jpg'},
+  {id:'mir',n:'מיריסה',lon:80.47,lat:5.95,kind:'חופים ולווייתנים',t:'מפרצים טרופיים ושייט לתצפית על לווייתנים, כ־15 ק״מ מאהנגמה.',img:'beach_aerial.jpg'}
+];
+function drawL0(){
+  const pts=ISL.map(([a,b])=>P0(a,b));const [ax,ay]=P0(80.362,5.973);
+  let s=`<rect width="1000" height="760" fill="var(--wash)"/>`;
+  for(let k=1;k<=3;k++)s+=`<path d="${smooth(pts,true)}" fill="none" stroke="var(--sea)" stroke-opacity="${.16/k}" stroke-width="${k*16}"/>`;
+  s+=`<path d="${smooth(pts,true)}" fill="var(--land)" stroke="var(--sea)" stroke-width="1.5"/>`;
+  s+=T(250,120,'סרי לנקה',{f:SERIF,size:44,op:.5})+T(880,420,'מפרץ בנגל',{size:15,fill:'var(--sea)'})+T(170,620,'האוקיינוס ההודי',{size:15,fill:'var(--sea)'});
+  s+=`<path d="${smooth([P0(80.18,6.07),P0(80.36,5.99),P0(80.52,5.95)],false)}" stroke="var(--sunset)" stroke-width="12" stroke-linecap="round" fill="none" opacity=".3"/>`+T(...P0(80.02,5.84),'אזור הפעילות שלנו',{size:15,w:700,a:'end',fill:'var(--sunset)'});
+  SPOTS0.forEach(p=>{const [x,y]=P0(p.lon,p.lat);const left=['col','gal'].includes(p.id);
+    s+=`<g class="hot" data-s="${p.id}" tabindex="0" role="button" aria-label="${p.n}"><circle class="ring" cx="${x}" cy="${y}" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/><circle cx="${x}" cy="${y}" r="4" fill="var(--ink)"/>${T(left?x-16:x+16,y+5,p.n,{size:16,w:700,a:left?'end':'start',halo:1})}</g>`;});
+  s+=`<g class="hot" data-s="ahz" tabindex="0" role="button" aria-label="אהנגמה, התקרבות"><circle cx="${ax}" cy="${ay}" r="26" fill="var(--sunset)" opacity=".2"><animate attributeName="r" values="18;34;18" dur="2.6s" repeatCount="indefinite"/></circle><circle class="ring" cx="${ax}" cy="${ay}" r="12" fill="var(--sunset)" stroke="var(--paper)" stroke-width="3"/>${T(ax,ay+44,'אהנגמה',{size:20,w:700,fill:'var(--sunset)'})}</g>`;
+  return s;
+}
+const L1={x0:80.17,x1:80.50,y0:6.07,y1:5.925};
+const P1=(lon,lat)=>[(lon-L1.x0)/(L1.x1-L1.x0)*1000,(L1.y0-lat)/(L1.y0-L1.y1)*760];
+const COAST1=[[80.16,6.06],[80.20,6.035],[80.215,6.025],[80.222,6.03],[80.235,6.018],[80.25,6.008],[80.27,6.003],[80.30,5.997],[80.322,5.986],[80.343,5.975],[80.362,5.969],[80.377,5.9655],[80.389,5.9605],[80.40,5.9585],[80.412,5.9615],[80.421,5.9675],[80.430,5.9715],[80.440,5.9705],[80.448,5.9645],[80.458,5.957],[80.466,5.9475],[80.475,5.946],[80.49,5.952],[80.51,5.955]];
+const SPOTS1=[
+  {id:'gal',n:'גאלה',lon:80.217,lat:6.033,kind:'מבצר היסטורי, 18 ק״מ',t:'עיר המבצר, אתר מורשת עולמית: גלריות, בתי קפה ושקיעות על החומות.',img:'galle.jpg'},
+  {id:'una',n:'אונאוואטונה',lon:80.25,lat:6.014,kind:'חוף ושנורקלינג',t:'מפרץ רגוע וחוף פופולרי, כ־13 ק״מ מאהנגמה.',img:'rocky.jpg'},
+  {id:'kog',n:'קוגלה',lon:80.322,lat:5.993,kind:'דייגי הכלונסאות',t:'אגם קוגלה והדייגים על הכלונסאות, אחד המראות המזוהים עם החוף הדרומי.',img:'stilt.jpg'},
+  {id:'kab',n:'קבלנה',lon:80.343,lat:5.981,kind:'גלישה, The Rock',t:'ביץ׳ ברייק לכל הרמות ושונית The Rock למתקדמים, כ־2 ק״מ מהשטחים.',img:'surf_aerial.jpg'},
+  {id:'mid',n:'מידיגמה',lon:80.392,lat:5.968,kind:'שוניות גלישה',t:'כפר גלישה ותיק עם כמה מהשוניות הטובות בחוף, כ־3 ק״מ מהשטחים.',img:'surfers_water.jpg'},
+  {id:'wel',n:'וליגמה',lon:80.430,lat:5.979,kind:'מפרץ גלישה, 9 ק״מ',t:'מפרץ רחב עם גלים למתחילים, בתי מלון ומסעדות. כ־15 דקות נסיעה.',img:'weligama_beach.jpg'},
+  {id:'mir',n:'מיריסה',lon:80.472,lat:5.954,kind:'חופים ולווייתנים, 15 ק״מ',t:'חופי בוטיק, חיי לילה ושייט לתצפית על לווייתנים.',img:'beach_aerial.jpg'}
+];
+function drawL1(){
+  const cp=COAST1.map(([a,b])=>P1(a,b));const coast=smooth(cp,false);
+  let s=`<rect width="1000" height="760" fill="var(--land)"/><path d="${coast} L1010,770 L-10,770 Z" fill="var(--wash)"/>`;
+  for(let k=1;k<=4;k++)s+=`<path d="${smooth(cp.map(([x,y])=>[x,y+k*22]),false)}" fill="none" stroke="var(--sea)" stroke-opacity="${.3-k*.06}" stroke-width="1.3"/>`;
+  s+=`<path d="${coast}" fill="none" stroke="var(--sea)" stroke-width="2"/>`;
+  s+=`<path d="${smooth(COAST1.map(([a,b])=>P1(a,b+0.004)),false)}" fill="none" stroke="var(--muted)" stroke-opacity=".4" stroke-width="3"/>`;
+  s+=T(500,725,'האוקיינוס ההודי',{f:SERIF,size:24,fill:'var(--sea)'})+T(40,40,'אזור הפעילות של Swell Estates',{size:15,w:700,a:'start',fill:'var(--sunset)'});
+  const a1=P1(80.3605,5.9715),a2=P1(80.368,5.99),a3=P1(80.370,6.07);
+  s+=`<path d="M${a1} L${a2} L${a3}" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 6" opacity=".6"/>${T(a3[0]+10,34,'↑ לכביש המהיר ולקולומבו',{size:14,w:600,a:'start',fill:'var(--muted)'})}`;
+  SPOTS1.forEach(p=>{const [x,y]=P1(p.lon,p.lat);s+=`<g class="hot" data-s="${p.id}" tabindex="0" role="button" aria-label="${p.n}"><circle class="ring" cx="${x}" cy="${y}" r="10" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.5"/><circle cx="${x}" cy="${y}" r="4" fill="var(--ink)"/>${T(x,y-18,p.n,{size:17,w:700,halo:1})}</g>`;});
+  const [ax,ay]=P1(80.366,5.976),[wx,wy]=P1(80.430,5.979);
+  s+=`<path d="M${ax+16},${ay-6} Q${(ax+wx)/2},${ay-110} ${wx-12},${wy-8}" fill="none" stroke="var(--sea)" stroke-width="2" stroke-dasharray="4 6"/><g transform="translate(${(ax+wx)/2},${ay-70})"><rect x="-78" y="-17" width="156" height="34" rx="17" fill="var(--sea)"/>${T(0,6,'9 ק״מ, כ־15 דק׳',{size:15,w:700,fill:'var(--sea-ink)'})}</g>`;
+  s+=`<g class="hot" data-s="ahz" tabindex="0" role="button" aria-label="אהנגמה, התקרבות"><circle cx="${ax}" cy="${ay}" r="34" fill="var(--sunset)" opacity=".16"><animate attributeName="r" values="24;42;24" dur="2.6s" repeatCount="indefinite"/></circle><circle class="ring" cx="${ax}" cy="${ay}" r="13" fill="var(--sunset)" stroke="var(--paper)" stroke-width="3"/>${T(ax,ay+44,'אהנגמה',{size:22,w:700,fill:'var(--sunset)',halo:1})}</g>`;
+  const km=1000/((L1.x1-L1.x0)*110.7);s+=`<g transform="translate(${1000-40-2*km},70)"><rect x="-12" y="-28" width="${2*km+24}" height="46" rx="10" fill="var(--paper)"/><line x1="0" y1="4" x2="${2*km}" y2="4" stroke="var(--ink)" stroke-width="2"/>${T(km,-8,'2 ק״מ',{size:13})}</g>`;
+  return s;
+}
+const L2={x0:80.335,x1:80.395,y0:5.988,y1:5.958};
+const P2=(lon,lat)=>[(lon-L2.x0)/(L2.x1-L2.x0)*1000,(L2.y0-lat)/(L2.y0-L2.y1)*760];
+const C2=[[80.330,5.981],[80.343,5.975],[80.352,5.972],[80.362,5.969],[80.370,5.9672],[80.377,5.9655],[80.383,5.9635],[80.389,5.9605],[80.395,5.959],[80.40,5.9585]];
+const SURF2=[
+  {id:'s_kab',n:'Kabalana',lon:80.341,lat:5.9755,t:'ביץ׳ ברייק לכל הרמות'},
+  {id:'s_rock',n:'The Rock',lon:80.347,lat:5.9728,t:'שונית עם גל A-frame, למתקדמים'},
+  {id:'s_mar',n:'Marshmallow',lon:80.356,lat:5.9705,t:'שונית רכה, מתאימה לגלים קטנים'},
+  {id:'s_gas',n:'Gas Station',lon:80.3655,lat:5.968,t:'שמאליים וימניים מעל שונית רדודה'},
+  {id:'s_sti',n:'Sticks',lon:80.3745,lat:5.966,t:'שונית עם כמה פיקים, לבינוניים ומעלה'}
+];
+const FOOD2=[
+  {id:'f_abode',n:'Abode by the Beach',lon:80.346,lat:5.9757,k:'מסעדת חוף',t:'פירות ים ומטבח בהשראה פרואנית, ליד חוף קבלנה.'},
+  {id:'f_kai',n:'Kai Ahangama',lon:80.3545,lat:5.9728,k:'קפה ובר גג',t:'בראנץ׳, קוקטיילים ושקיעות מהגג, על הכביש הראשי.'},
+  {id:'f_lab',n:'La Belle',lon:80.3585,lat:5.9718,k:'מסעדה ובר',t:'מקום של כל היום: בוקר, צהריים ומשקה בערב.'},
+  {id:'f_cac',n:'Cactus',lon:80.3625,lat:5.9703,k:'בית קפה על החוף',t:'בראנץ׳ בגינה טרופית מול הים.'},
+  {id:'f_cey',n:'Cafe Ceylon',lon:80.3605,lat:5.9742,k:'בית קפה',t:'גינה אחורית, שווקים וערבי סרטים.'},
+  {id:'f_kip',n:'The Kip',lon:80.3635,lat:5.9775,k:'קפה ובוטיק',t:'ארוחות בוקר סרי לנקיות בגינה, מעט מחוץ לרחוב הראשי.'},
+  {id:'f_lig',n:'Lighthouse',lon:80.3805,lat:5.9668,k:'בר גג מול הים',t:'שקיעות, מוזיקה ואירועים בגוביאפאנה, ליד שטח 4.'},
+  {id:'f_unc',n:'Hotel De Uncles',lon:80.3865,lat:5.9648,k:'בר ואוכל מקומי',t:'מנות סרי לנקיות בטוויסט וקוקטיילים, על דרך מטארה.'}
+];
+const filt={plot:true,surf:true,food:true};
+function drawL2(){
+  const cp=C2.map(([a,b])=>P2(a,b));const coast=smooth(cp,false);
+  let s=`<rect width="1000" height="760" fill="var(--land)"/><path d="${coast} L1010,770 L-10,770 Z" fill="var(--wash)"/>`;
+  for(let k=1;k<=4;k++)s+=`<path d="${smooth(cp.map(([x,y])=>[x,y+k*20]),false)}" fill="none" stroke="var(--sea)" stroke-opacity="${.3-k*.06}" stroke-width="1.3"/>`;
+  s+=`<path d="${coast}" fill="none" stroke="var(--sea)" stroke-width="2"/>`;
+  const rd=smooth(C2.map(([a,b])=>P2(a,b+0.0018)),false);s+=`<path d="${rd}" fill="none" stroke="var(--paper)" stroke-width="8"/><path d="${rd}" fill="none" stroke="var(--muted)" stroke-opacity=".45" stroke-width="2"/>`;
+  const ir=`M${P2(80.3605,5.9708)} L${P2(80.3672,5.978)} L${P2(80.369,5.988)}`;s+=`<path d="${ir}" fill="none" stroke="var(--paper)" stroke-width="7"/><path d="${ir}" fill="none" stroke="var(--muted)" stroke-opacity=".45" stroke-width="2"/>`;
+  s+=T(...P2(80.3698,5.9862),'Imaduwa Rd',{size:13,a:'start',fill:'var(--muted)'})+T(...P2(80.338,5.9805),'Galle Rd',{size:13,fill:'var(--muted)'});
+  s+=T(500,730,'האוקיינוס ההודי',{f:SERIF,size:24,fill:'var(--sea)'});
+  if(filt.surf)SURF2.forEach(p=>{const [x,y]=P2(p.lon,p.lat);s+=`<g class="hot" data-s="${p.id}" tabindex="0" role="button" aria-label="${p.n}"><circle class="ring" cx="${x}" cy="${y+30}" r="9" fill="var(--sunset)" stroke="var(--paper)" stroke-width="2.5"/>${T(x,y+58,p.n,{size:13,w:600})}</g>`;});
+  if(filt.food)FOOD2.forEach(p=>{const [x,y]=P2(p.lon,p.lat);s+=`<g class="hot" data-s="${p.id}" tabindex="0" role="button" aria-label="${p.n}"><circle class="ring" cx="${x}" cy="${y}" r="9" fill="#8A5A9E" stroke="var(--paper)" stroke-width="2.5"/><path d="M${x-2.5},${y-4} v8 M${x+2.5},${y-4} v8" stroke="#fff" stroke-width="1.6"/></g>`;});
+  if(filt.plot)PLOTS.forEach(p=>{const off={1:[12,-8],2:[-14,-8],3:[-2,14],4:[0,0]}[p.id];let [x,y]=P2(p.lon,p.lat);x+=off[0];y+=off[1];
+    s+=`<g class="hot" data-s="plot${p.id}" tabindex="0" role="button" aria-label="שטח ${p.id}"><circle class="ring" cx="${x}" cy="${y}" r="14" fill="var(--sea)" stroke="var(--paper)" stroke-width="3"/>${T(x,y+5,p.id,{size:14,w:700,fill:'var(--sea-ink)'})}</g>`;});
+  const km=1000/((L2.x1-L2.x0)*110.7)/2;s+=`<g transform="translate(${1000-40-km},60)"><rect x="-12" y="-28" width="${km+24}" height="46" rx="10" fill="var(--paper)"/><line x1="0" y1="4" x2="${km}" y2="4" stroke="var(--ink)" stroke-width="2"/>${T(km/2,-8,'500 מ׳',{size:13})}</g>`;
+  return s;
+}
+let level=0;
+const INTRO=[
+  {img:'beach_aerial.jpg',kind:'סרי לנקה',n:'האי כולו',t:'לחצו על כל נקודה כדי להכיר את האזור. הרצועה הכתומה בדרום היא אזור הפעילות שלנו: לחצו על הנקודה הכתומה כדי להתקרב.'},
+  {img:'weligama_boards.jpg',kind:'אזור הפעילות שלנו',n:'מגאלה ועד מיריסה',t:'כאן אנחנו מאתרים קרקעות. רצועת חוף של כ־35 ק״מ עם ספוטי גלישה, מבצר היסטורי ומפרצים טרופיים. אהנגמה נמצאת בדיוק באמצע.'},
+  {img:'hero_sunset.jpg',kind:'אהנגמה',n:'השטחים הזמינים כרגע',t:'השטחים שפתוחים עכשיו, ספוטי הגלישה, ובתי הקפה והמסעדות שהפכו את אהנגמה ליעד. השתמשו במסננים כדי לבחור מה להציג.'}
+];
+const HINTS=['לחצו על הנקודה הכתומה כדי להתקרב','לחצו על אהנגמה כדי לראות את השטחים הזמינים','לחצו על שטח, ספוט או מסעדה'];
+function panelHTML(o){return `${o.img?`<img src="${o.img}" alt="">`:''}<div class="pb"><div class="kind">${o.kind}</div><h3>${o.n}</h3><p>${o.t}</p>${o.cta||''}</div>`;}
+function draw(){$('#mapsvg').innerHTML=level===0?drawL0():level===1?drawL1():drawL2();bindHot();}
+function setLevel(l){level=l;const svg=$('#mapsvg');svg.style.opacity=0;setTimeout(()=>{draw();svg.style.opacity=1;},170);
+  $$('#crumbs button').forEach(b=>b.setAttribute('aria-current',+b.dataset.l===l));$('#filters').hidden=l!==2;$('#hint').textContent=HINTS[l];$('#panel').innerHTML=panelHTML(INTRO[l]);}
+function bindHot(){$$('#mapsvg .hot').forEach(g=>{const act=()=>pick(g.dataset.s,g);g.onclick=act;g.onkeydown=e=>{if(e.key==='Enter')act()};});}
+function pick(id,g){$$('#mapsvg .hot').forEach(x=>x.classList.toggle('on',x===g));
+  if(id==='ahz'){setLevel(level+1);return;}
+  let o=null;
+  if(level===0)o=SPOTS0.find(p=>p.id===id);
+  else if(level===1)o=SPOTS1.find(p=>p.id===id);
+  else{const s=SURF2.find(p=>p.id===id),f=FOOD2.find(p=>p.id===id);
+    if(s)o={kind:'ספוט גלישה',n:`<span class="ltr">${s.n}</span>`,t:s.t+'. המיקום במפה משוער.',img:'surfers_water.jpg'};
+    else if(f)o={kind:f.k,n:`<span class="ltr">${f.n}</span>`,t:f.t+' המיקום במפה משוער.',img:null};
+    else if(id.startsWith('plot')){const p=PLOTS.find(x=>'plot'+x.id===id);o={kind:`שטח ${p.id}, ${p.status}`,n:`<span class="ltr">${p.road}</span>`,t:`${p.m2} מ״ר, ${p.beach} מהים. ${fmt(p.ils)}. ${p.tag}.`,img:p.poster,cta:`<a class="btn btn-sea" href="#plot-${p.id}">לתיק השטח</a>`};}}
+  if(o)$('#panel').innerHTML=panelHTML(o);}
+$$('#crumbs button').forEach(b=>b.onclick=()=>setLevel(+b.dataset.l));
+$$('#filters button').forEach(b=>b.onclick=()=>{const k=b.dataset.f;filt[k]=!filt[k];b.setAttribute('aria-pressed',filt[k]);draw();});
+level=0;draw();$('#hint').textContent=HINTS[0];$('#panel').innerHTML=panelHTML(INTRO[0]);
+
+/* ---------- drawer ---------- */
+function footprintSVG(p){const k=6.4,side=Math.sqrt(p.m2)*k,pad=14,box=Math.sqrt(860)*k+pad*2,ox=(box-side)/2,oy=(box-side)/2,n=p.concept.fp.length;let inner='';
+  p.concept.fp.forEach((a,i)=>{const fw=Math.min(Math.sqrt(a*1.6)*k,side/n*0.82),fh=a*k*k/fw,gx=ox+side/(n+1)*(i+1)-fw/2,gy=oy+side*0.14,pw=Math.min(8*k,fw*.8),ph=3.5*k;
+    inner+=`<rect x="${gx}" y="${gy}" width="${fw}" height="${fh}" rx="3" fill="var(--ink)" opacity=".85"/><rect x="${gx+fw/2-pw/2}" y="${gy+fh+0.05*side+4}" width="${pw}" height="${ph}" rx="3" fill="var(--sea)"/>`;});
+  return `<svg viewBox="0 0 ${box} ${box}" role="img" aria-label="העמדה משוערת" direction="ltr"><rect x="${ox}" y="${oy}" width="${side}" height="${side}" fill="var(--land)" stroke="var(--sea)" stroke-width="2" stroke-dasharray="6 5" rx="4"/>${inner}${T(box/2,oy+side-10,p.m2+' מ״ר',{size:13,fill:'var(--muted)'})}</svg>`;}
+const drawer=$('#drawer'),scrim=$('#scrim');let lastFocus=null;
+function openPlot(id){if(location.hash!=='#plot-'+id){location.hash='plot-'+id;return;}render(id);}
+function render(id){const p=PLOTS.find(x=>x.id===id);if(!p)return;const e=estimate(p);
+  const msg=`היי אלנה, ראיתי באתר את שטח ${p.id} (${p.road}, ${p.m2} מ״ר, ${fmt(p.ils)}) ואשמח לפרטים נוספים.`;
+  drawer.innerHTML=`<div class="d-head"><span>תיק שטח</span><button class="x" type="button" id="dClose" aria-label="סגירה">×</button></div>
+  <div class="d-body">
+    <div class="d-top"><div>
+      <h2 class="d-title" id="dTitle">שטח ${p.id}</h2><div class="d-sub"><span class="ltr">${p.road}</span>, אהנגמה, סרי לנקה</div>
+      <div style="margin-top:12px;color:var(--sea);font-weight:600">${p.tag}</div>
+      <div class="d-price num">${fmt(p.ils)}<small><span class="ltr">LKR ${p.lkr.toLocaleString('en-US')}</span>, נכון ל־${PRICE_DATE}</small></div>
+      <div class="d-specs num">
+        <div>גודל<b>${p.perches} פרץ׳ (${p.m2} מ״ר)</b></div><div>מרחק מהים<b>${p.beach}</b></div>
+        <div>מחיר לפרץ׳<b><span class="ltr">LKR ${p.lkrPerPerch.toLocaleString('en-US')}</span></b></div><div>מחיר למ״ר<b>${fmt(p.ilsM2)}</b></div>
+        <div>וליגמה / גאלה<b>9 ק״מ / 18 ק״מ</b></div><div>מיקום מדויק<b><a href="${p.gmaps}" target="_blank" rel="noopener">פתיחה בגוגל מפות</a></b></div>
+      </div>
+      <div class="d-actions"><a class="btn btn-sea" href="${wa(msg)}" target="_blank" rel="noopener">אני מעוניין/ת בשטח הזה</a><button class="btn btn-line" type="button" id="dCalc">פתיחה במחשבון</button></div>
+    </div><div><div class="vid"><video controls playsinline preload="metadata" poster="${p.poster}" src="${p.video}"></video></div><div class="vid-cap">צילום גולמי מהשטח, אוקטובר 2026</div></div></div>
+    <div class="d-block"><div class="over" style="margin-bottom:6px">מה אפשר לבנות כאן</div><h3>${p.concept.title}</h3>
+      <div class="concept"><div><img src="villa1.jpg" alt="השראה: וילה טרופית עם בריכה"><div class="fp-cap">השראה לסגנון. לא הדמיה של השטח.</div></div><div>${footprintSVG(p)}<div class="fp-cap">העמדה משוערת של מבנה ובריכה ביחס לשטח</div></div></div>
+      <div class="est num"><div>השקעה כוללת משוערת<b>${fmtK(e.total)}</b></div><div>הכנסה נטו בשנה<b>${fmtK(e.net)}</b></div><div class="hl">תשואה נטו משוערת<b>${e.yld.toFixed(1)}%</b></div></div>
+      <p class="d-note">לפי ${e.area} מ״ר בנוי, ${fmt(e.cost)} למ״ר, ${fmt(e.night)} ללילה ותפוסה של ${e.occ}%. קונספט אפשרי בלבד, כפוף לתכנון ולאישורים.</p></div>
+  </div>`;
+  drawer.hidden=false;scrim.hidden=false;lastFocus=document.activeElement;requestAnimationFrame(()=>{drawer.classList.add('show');scrim.classList.add('show');});document.body.style.overflow='hidden';
+  $('#dClose').onclick=closePlot;$('#dCalc').onclick=()=>{closePlot();setMode('rent');setPlot(p.id);setTimeout(()=>$('#calculator').scrollIntoView({behavior:'smooth'}),60);};setTimeout(()=>$('#dClose').focus(),50);}
+function hideDrawer(){drawer.classList.remove('show');scrim.classList.remove('show');document.body.style.overflow='';const v=drawer.querySelector('video');if(v)v.pause();
+  setTimeout(()=>{if(!drawer.classList.contains('show')){drawer.hidden=true;scrim.hidden=true;}},340);if(lastFocus&&lastFocus.focus)try{lastFocus.focus({preventScroll:true})}catch(_){}}
+function closePlot(){try{history.replaceState(null,'',location.pathname+location.search)}catch(_){}hideDrawer();}
+scrim.onclick=closePlot;document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!drawer.hidden)closePlot();});
+function route(){const m=location.hash.match(/^#plot-(\d+)$/);if(m)render(+m[1]);else if(!drawer.hidden)hideDrawer();}
+addEventListener('hashchange',route);
+
+/* ---------- calculator ---------- */
+let cur=PLOTS[0],mode='rent';
+$('#calcChips').innerHTML=PLOTS.map(p=>`<button class="chip" type="button" data-id="${p.id}" aria-pressed="false">שטח ${p.id}, ${fmtK(p.ils)}</button>`).join('');
+$$('.chip').forEach(c=>c.onclick=()=>setPlot(+c.dataset.id));
+function setMode(m){mode=m;$('#modeRent').setAttribute('aria-selected',m==='rent');$('#modeHold').setAttribute('aria-selected',m==='hold');$('#rentFields').hidden=m!=='rent';$('#holdFields').hidden=m!=='hold';calc();}
+$('#modeRent').onclick=()=>setMode('rent');$('#modeHold').onclick=()=>setMode('hold');
+function setPlot(id){cur=PLOTS.find(p=>p.id===id);$$('.chip').forEach(c=>c.setAttribute('aria-pressed',+c.dataset.id===id));
+  $('#cUnits').value=cur.concept.units;$('#cArea').value=cur.concept.area;$('#cCost').value=DEF.cost;$('#cNight').value=cur.concept.nightly;$('#cOcc').value=DEF.occ;$('#cExp').value=DEF.exp;calc();}
+$('#hYears').value=DEF.years;$('#hGrowth').value=DEF.growth;$('#hBuyCost').value=DEF.buy;$('#hSellCost').value=DEF.sell;
+const row=(a,b)=>`<div><span>${a}</span><b>${b}</b></div>`;
+function calc(){
+  if(mode==='rent'){const o={units:+$('#cUnits').value,area:+$('#cArea').value,cost:+$('#cCost').value,night:+$('#cNight').value,occ:+$('#cOcc').value,exp:+$('#cExp').value};const e=estimate(cur,o);
+    $('#oUnits').textContent=o.units;$('#oArea').textContent=o.area+' מ״ר';$('#oCost').textContent=fmt(o.cost);$('#oNight').textContent=fmt(o.night);$('#oOcc').textContent=o.occ+'%';$('#oExp').textContent=o.exp+'%';
+    $('#rBig').textContent=e.yld.toFixed(1)+'%';$('#rBigLabel').textContent='תשואה שנתית נטו משוערת על כל ההשקעה';
+    $('#rRows').innerHTML=row('מחיר הקרקע',fmt(cur.ils))+row('עלות בנייה משוערת',fmt(e.build))+row('סך ההשקעה',fmt(e.total))+row('הכנסה שנתית ברוטו',fmt(e.gross))+row('הכנסה שנתית נטו',fmt(e.net))+row('החזר ההשקעה',e.payback.toFixed(1)+' שנים');
+    $('#rNote').textContent='הערכה להמחשה בלבד, לא התחייבות לתשואה ולא ייעוץ השקעות. נתוני שוק: AirROI, אהנגמה, נובמבר 2025 עד אוקטובר 2026. לא כולל עליית ערך, מיסים ועלויות מימון.';}
+  else{const y=+$('#hYears').value,g=+$('#hGrowth').value,bc=+$('#hBuyCost').value,sc=+$('#hSellCost').value;
+    $('#oYears').textContent=y+' שנים';$('#oGrowth').textContent=g+'%';$('#oBuyCost').textContent=bc+'%';$('#oSellCost').textContent=sc+'%';
+    const buy=cur.ils*(1+bc/100),fv=cur.ils*Math.pow(1+g/100,y),sellNet=fv*(1-sc/100),cgt=Math.max(0,(fv-cur.ils)*0.10),proceeds=sellNet-cgt,profit=proceeds-buy,ann=(Math.pow(Math.max(proceeds,1)/buy,1/y)-1)*100;
+    $('#rBig').innerHTML=`<span class="ltr">${profit>=0?'+':'−'}${fmtK(Math.abs(profit))}</span>`;$('#rBigLabel').textContent=`רווח נטו משוער אחרי ${y} שנים`;
+    $('#rRows').innerHTML=row('מחיר הקרקע',fmt(cur.ils))+row('עלות כוללת ברכישה',fmt(buy))+row('שווי משוער במכירה',fmt(fv))+row('מס רווח הון בסרי לנקה (10%)',fmt(cgt))+row('תמורה נטו אחרי עלויות ומס',fmt(proceeds))+row('תשואה שנתית ממוצעת',ann.toFixed(1)+'%');
+    $('#rNote').textContent='תרחיש להמחשה בלבד. עליית הערך היא הנחה שלכם ואינה תחזית או התחייבות. לא כולל מיסוי בישראל, הפרשי שער ועלויות החזקה. שוק הקרקעות פחות נזיל, ומכירה יכולה לקחת זמן.';}}
+['cUnits','cArea','cCost','cNight','cOcc','cExp','hYears','hGrowth','hBuyCost','hSellCost'].forEach(i=>$('#'+i).addEventListener('input',calc));
+setPlot(1);
+
+/* ---------- lead form ---------- */
+$('#plotOpts').insertAdjacentHTML('beforeend',PLOTS.map(p=>`<label><input type="radio" name="plot" value="שטח ${p.id} (${p.road})"><span>שטח ${p.id}</span></label>`).join(''));
+function leadMsg(){const f=new FormData($('#lead'));const name=(f.get('fname')||'').trim();return `היי אלנה${name?', כאן '+name:''}. הגעתי מהאתר של Swell Estates.\nמטרה: ${f.get('goal')}\nתקציב: ${f.get('budget')}\nשטח: ${f.get('plot')}`;}
+function updLead(){const m=leadMsg();$('#preview').textContent=m;$('#waSend').href=wa(m);}
+$('#lead').addEventListener('input',updLead);$('#lead').addEventListener('change',updLead);$('#lead').addEventListener('submit',e=>e.preventDefault());updLead();
+$('#fab').href=wa('היי אלנה, הגעתי מהאתר של Swell Estates ואשמח לשמוע על ההזדמנויות בחוף הדרומי.');
+function toast(t){const d=document.createElement('div');d.className='toast';d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),1800);}
+function copy(text,el){(navigator.clipboard?navigator.clipboard.writeText(text):Promise.reject()).then(()=>toast('הועתק')).catch(()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);toast('סמנו והעתיקו');});}
+$('#copyPhone').onclick=()=>copy('+972547658608',$('#phoneText'));$('#copyMsg').onclick=()=>copy(leadMsg(),$('#preview'));
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)$$('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');v.pause();});
+route();
+</script>
+
+</body>
+</html>
